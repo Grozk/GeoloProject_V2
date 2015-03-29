@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GeolocProject_V2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Parametres</string>
+    <string name="action_ajoutContact">Ajouter un contact</string>
+    <string name="title_activity_list_principal">ListPrincipalActivity</string>
+    <string name="title_activity_gps">GPSActivity</string>
+    <string name="search">Recherche...</string>
+    
+</resources>
