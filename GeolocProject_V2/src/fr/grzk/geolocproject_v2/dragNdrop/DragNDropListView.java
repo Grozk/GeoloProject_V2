@@ -16,6 +16,8 @@
 
 package fr.grzk.geolocproject_v2.dragNdrop;
 
+import java.util.Calendar;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.PixelFormat;
@@ -27,6 +29,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class DragNDropListView extends ListView {
 
@@ -58,7 +61,8 @@ public class DragNDropListView extends ListView {
 	public void setDragListener(DragListener l) {
 		mDragListener = l;
 	}
-
+	
+	
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
 		final int action = ev.getAction();
@@ -69,7 +73,7 @@ public class DragNDropListView extends ListView {
 			mDragMode = true;
 		}
 
-		if (!mDragMode) 
+		if (!mDragMode)
 			return super.onTouchEvent(ev);
 
 		switch (action) {

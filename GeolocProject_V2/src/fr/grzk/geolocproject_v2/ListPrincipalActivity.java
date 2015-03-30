@@ -24,7 +24,7 @@ import fr.grzk.geolocproject_v2.dragNdrop.RemoveListener;
 import fr.grzk.geolocproject_v2.object.Individu;
 import fr.grzk.geolocproject_v2.object.Individu_;
 
-public class ListPrincipalActivity extends Activity /*implements OnItemClickListener*/{
+public class ListPrincipalActivity extends Activity implements OnItemClickListener{
 
 	List<Individu> listSave =new ArrayList<Individu>();
 	List<Individu> listValues =new ArrayList<Individu>();
@@ -44,7 +44,7 @@ public class ListPrincipalActivity extends Activity /*implements OnItemClickList
 		list.setAdapter(adapter);
 
 		
-//		list.setOnItemClickListener(this);
+		list.setOnItemClickListener(this);
         if (list instanceof DragNDropListView) {
         	((DragNDropListView) list).setDropListener(mDropListener);
         	((DragNDropListView) list).setRemoveListener(mRemoveListener);
@@ -101,14 +101,14 @@ public class ListPrincipalActivity extends Activity /*implements OnItemClickList
 		return super.onOptionsItemSelected(item);
 	}
 
-//	@Override
-//	public void onItemClick(AdapterView<?> adapter, View v, int position, long id) {
-//		Individu item = (Individu) adapter.getAdapter().getItem(position);
-//		System.out.println(item);
-//		Intent intent = new Intent(this, GPSActivity.class);
-//		intent.putExtra("orientation","45.0");
-//		startActivity(intent);	
-//	}
+	@Override
+	public void onItemClick(AdapterView<?> adapter, View v, int position, long id) {
+		Individu item = (Individu) adapter.getAdapter().getItem(position);
+		System.out.println(item);
+		Intent intent = new Intent(this, GPSActivity.class);
+		intent.putExtra("orientation","45.0");
+		startActivity(intent);	
+	}
 	
 	private DropListener mDropListener = 
 			new DropListener() {
