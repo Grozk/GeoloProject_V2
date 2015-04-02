@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.3'
+    }
+}
+
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+	compileSdkVersion 20
+	buildToolsVersion "20.0.0"
+	
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 21
+    }
+    
+    buildTypes {
+        debug {
+            sourceSets {
+                main {
+                    manifest.srcFile 'AndroidManifest.xml'
+                    java.srcDirs = ['src']
+                    resources.srcDirs = ['src']
+                    res.srcDirs = ['res']
+                    assets.srcDirs = ['assets']
+                }
+            }
+        }
+      }
+   
+	  packagingOptions {
+	    exclude 'META-INF/LICENSE'
+	    exclude 'META-INF/NOTICE'
+	  }
+
+        lintOptions {
+          abortOnError false
+      }
+        
+        
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:20.0.0'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.2.3'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.2.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.2.3'
+}

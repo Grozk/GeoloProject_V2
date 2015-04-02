@@ -25,6 +25,8 @@ public class Individu_ {
 	private String dateInscription;
 	@JsonProperty("isDesactive")
 	private Boolean isDesactive;
+	@JsonProperty("isRelationActive")
+	private Boolean isRelationActive;
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -76,6 +78,16 @@ public class Individu_ {
 	@JsonProperty("isDesactive")
 	public void setIsDesactive(Boolean isDesactive) {
 		this.isDesactive = isDesactive;
+	}
+
+	@JsonProperty("isRelationActive")
+	public Boolean getIsRelationActive() {
+		return isRelationActive;
+	}
+
+	@JsonProperty("isRelationActive")
+	public void setIsRelationActive(Boolean isRelationActive) {
+		this.isRelationActive = isRelationActive;
 	}
 
 	@JsonAnyGetter
